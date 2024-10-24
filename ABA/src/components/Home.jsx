@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Teste from "../imagem/koromaru.png";
  
-function BasicExample() {
+function Home() {
   return (
     <>
     <div className='pesquisa'>
@@ -18,8 +18,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 1</Card.Title> 
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Projeto sobre projeto sobre projeto sobre projeto sobre
+          projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -31,8 +31,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 2</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Projeto sobre projeto sobre projeto sobre projeto sobre
+        projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -45,8 +45,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 3</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Projeto sobre projeto sobre projeto sobre projeto sobre
+        projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -61,8 +61,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 1</Card.Title> 
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Projeto sobre projeto sobre projeto sobre projeto sobre
+        projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -74,8 +74,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 2</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Projeto sobre projeto sobre projeto sobre projeto sobre
+        projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -88,8 +88,8 @@ function BasicExample() {
       <Card.Body>
         <Card.Title>Projeto 3</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        Projeto sobre projeto sobre projeto sobre projeto sobre
+        projeto sobre aaaaaa
         </Card.Text>
         <Button variant="primary">Veja mais!</Button>
       </Card.Body>
@@ -101,4 +101,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Home;
