@@ -21,3 +21,47 @@ input {
 .navbar {
  background-color: #0A3161;
 }
+
+.institui {
+  width: 1000px;
+  height: 300px;
+  margin-left: 250px;
+  margin-top: -80px;
+}
+
+.nomes {
+  margin-left: 90px;
+  margin-top: -50px;
+  font-weight: bold;
+  width: 100px; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  text-align: center;
+}
+
+.nomes2 {
+  margin-top: -50px;
+  margin-left: 90px;
+  font-weight: bold;
+  width: 100px; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.nomes3 {
+  margin-left: 90px;
+  margin-top: -50px;
+  font-weight: bold;
+  width: 100px; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.institui2 {
+  width: 1000px;
+  height: 300px;
+  margin-left: 250px;
+  margin-top: -70px;
+}
