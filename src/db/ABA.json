@@ -1,0 +1,26 @@
+{
+    "Usuario": [
+      {
+        "nome": "Janielson Anjos",
+        "emailInstitucional": "email@email.com",
+        "emailSecundario": "email@email.com",
+        "dataNascimento": "25-01-1994",
+        "senha": "123"
+      },
+      {
+        "nome": "test",
+        "emailInstitucional": "test@email.com",
+        "emailSecundario": "test@email.com",
+        "dataNascimento": "21-01-1994",
+        "senha": "test"
+      },
+      {
+        "nome": "admin",
+        "emailInstitucional": "admin",
+        "emailSecundario": "admin",
+        "dataNascimento": "21-01-1994",
+        "senha": "admin"
+      }
+    ]
+    
+  }
