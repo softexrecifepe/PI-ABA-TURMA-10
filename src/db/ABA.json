@@ -1,0 +1,75 @@
+{
+  "Usuario": [
+    {
+      "nome": "Janielson Anjos",
+      "emailInstitucional": "email@email.com",
+      "emailSecundario": "email@email.com",
+      "dataNascimento": "25-01-1994",
+      "senha": "123",
+      "id": "d6bc"
+    },
+    {
+      "nome": "test",
+      "emailInstitucional": "test@email.com",
+      "emailSecundario": "test@email.com",
+      "dataNascimento": "21-01-1994",
+      "senha": "test",
+      "id": "ec4a"
+    },
+    {
+      "nome": "admin",
+      "emailInstitucional": "admin",
+      "emailSecundario": "admin",
+      "dataNascimento": "21-01-1994",
+      "senha": "admin",
+      "id": "9bbd"
+    }
+  ],
+  "projetos": [
+    {
+      "id": "1",
+      "titulo": "Projeto Impressão 3D",
+      "descricao": "Neste projeto, exploramos o potencial da impressão 3D para criar peças personalizadas e funcionais, permitindo a customização e inovação em diversos produtos. Aprenda sobre modelagem 3D e técnicas de impressão que tornam suas ideias uma realidade.",
+      "autores": "João e Maria",
+      "categoria": [
+        "Impressão 3D",
+        "Modelagem 3D"
+      ],
+      "dataPostagem": "2023-11-01",
+      "imagem": "https://ufpa.br/wp-content/uploads/2024/07/Amazon-Maker_Foto-Marcelo-Dias.png"
+    },
+    {
+      "id": "2",
+      "titulo": "Projeto Eletrônica",
+      "descricao": "Neste projeto, vamos construir um circuito eletrônico básico que serve como introdução ao mundo da eletrônica. Aprenda sobre componentes eletrônicos, como resistores e capacitores, e descubra como montar um circuito funcional, desenvolvendo habilidades práticas essenciais.",
+      "autores": "Carlos",
+      "categoria": [
+        "Eletrônica"
+      ],
+      "dataPostagem": "2023-11-02",
+      "imagem": "https://jornadaedu.com.br/wp-content/uploads/2021/02/educacao-5-0.png"
+    },
+    {
+      "id": "3",
+      "titulo": "Projeto Mobile",
+      "descricao": "Neste projeto, você irá desenvolver um aplicativo móvel desde a concepção até a implementação. Explore as melhores práticas de programação, design de interface e usabilidade, e transforme sua ideia em um aplicativo funcional e atraente para usuários.",
+      "autores": "Mario",
+      "categoria": [
+        "programação"
+      ],
+      "dataPostagem": "2023-11-03",
+      "imagem": "https://www.jornaldebarueri.com.br/wp-content/uploads/2022/06/sala-maker-13.jpeg"
+    },
+    {
+      "id": "3abe",
+      "titulo": "Projeto de front end",
+      "descricao": "Aqui tem um projeto de front end para testes",
+      "autores": "Janielson Anjos",
+      "categoria": [
+        "Programação"
+      ],
+      "dataPostagem": "2024-11-03",
+      "imagem": "https://media.licdn.com/dms/image/D4D12AQHIgHPxuT8wlw/article-cover_image-shrink_720_1280/0/1685473745935?e=2147483647&v=beta&t=-QLIf9wbAoQixbRNmUN0ezhhyBaMBeWW3pUhLJ-4PBw"
+    }
+  ]
+}

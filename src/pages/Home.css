@@ -1,0 +1,15 @@
+.conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.projetos{
+    margin-top: 50px;
+    margin-left: 250px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
