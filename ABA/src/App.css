@@ -10,7 +10,7 @@
   justify-content: flex-end; 
   padding: 10px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 input {
@@ -25,8 +25,8 @@ input {
 .institui {
   width: 1000px;
   height: 300px;
-  margin-left: 250px;
-  margin-top: -80px;
+  margin-left: 490px;
+  margin-top: 10px;
 }
 
 .nomes {
@@ -62,6 +62,6 @@ input {
 .institui2 {
   width: 1000px;
   height: 300px;
-  margin-left: 250px;
-  margin-top: -70px;
+  margin-left: 490px;
+  margin-top: -30px;
 }
