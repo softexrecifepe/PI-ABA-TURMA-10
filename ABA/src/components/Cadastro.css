@@ -1,0 +1,11 @@
+
+form {
+    border-radius: solid 10px ;
+    width: 800px;
+    margin-left: 250px;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+}

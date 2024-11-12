@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import imagem from "../imagem/icone-profile.png";
-import iconeProfile from "../../assets/images/icone-profile.png";
+import iconeProfile from "../imagem/icone-profile.png";
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
