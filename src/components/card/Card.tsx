@@ -190,7 +190,7 @@
 //         <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //           Descrição breve do projeto. Este campo pode conter um resumo do que o projeto aborda.
 //         </Typography>
-        
+
 //         <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
 //           Autores:
 //         </Typography>
@@ -230,7 +230,7 @@
 //           <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //             Tipo de licença Creative Commons utilizada no projeto.
 //           </Typography>
-          
+
 //           <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
 //             URL do Drive:
 //           </Typography>
@@ -244,13 +244,12 @@
 //           <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //             #hashtag1 #hashtag2 #hashtag3
 //           </Typography>
-        
+
 //         </CardContent>
 //       </Collapse>
 //     </Card>
 //   );
 // }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -323,7 +322,7 @@
 //         <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //           Descrição breve do projeto. Este campo pode conter um resumo do que o projeto aborda.
 //         </Typography>
-        
+
 //         <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
 //           Autores:
 //         </Typography>
@@ -363,7 +362,7 @@
 //           <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //             Tipo de licença Creative Commons utilizada no projeto.
 //           </Typography>
-          
+
 //           <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
 //             URL do Drive:
 //           </Typography>
@@ -377,36 +376,35 @@
 //           <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
 //             #hashtag1 #hashtag2 #hashtag3
 //           </Typography>
-        
+
 //         </CardContent>
 //       </Collapse>
 //     </Card>
 //   );
 // }
 
-
 /////////////////////////////////////////// funcionando 03/11 ///////////////////////////////////////////////////////
 
-// import * as React from 'react';
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { styled } from '@mui/material/styles';
-// import Card from '@mui/material/Card';
-// import CardHeader from '@mui/material/CardHeader';
-// import CardMedia from '@mui/material/CardMedia';
-// import CardContent from '@mui/material/CardContent';
-// import CardActions from '@mui/material/CardActions';
-// import Collapse from '@mui/material/Collapse';
-// import Avatar from '@mui/material/Avatar';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
-// import { red } from '@mui/material/colors';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import * as React from "react";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { styled } from "@mui/material/styles";
+// import Card from "@mui/material/Card";
+// import CardHeader from "@mui/material/CardHeader";
+// import CardMedia from "@mui/material/CardMedia";
+// import CardContent from "@mui/material/CardContent";
+// import CardActions from "@mui/material/CardActions";
+// import Collapse from "@mui/material/Collapse";
+// import Avatar from "@mui/material/Avatar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import { red } from "@mui/material/colors";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import ShareIcon from "@mui/icons-material/Share";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-// const BASE_URL = 'http://localhost:3000/projetos';
+// const BASE_URL = "http://localhost:3000/projetos";
 
 // interface Project {
 //   id: number;
@@ -423,13 +421,13 @@
 // }
 
 // const ExpandMore = styled(IconButton, {
-//   shouldForwardProp: (prop) => prop !== 'expand',
+//   shouldForwardProp: (prop) => prop !== "expand",
 // })<{ expand: boolean }>(({ theme, expand }) => ({
-//   marginLeft: 'auto',
-//   transition: theme.transitions.create('transform', {
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
 //     duration: theme.transitions.duration.shortest,
 //   }),
-//   transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
+//   transform: expand ? "rotate(180deg)" : "rotate(0deg)",
 // }));
 
 // export default function ProjectCard() {
@@ -443,7 +441,12 @@
 //   const loadProjects = async () => {
 //     try {
 //       const response = await axios.get(BASE_URL);
-//       setProjects(response.data);
+//       const sortedProjects = response.data.sort(
+//         (a: Project, b: Project) =>
+//           new Date(b.dataPostagem).getTime() -
+//           new Date(a.dataPostagem).getTime()
+//       );
+//       setProjects(sortedProjects);
 //     } catch (error) {
 //       console.error("Erro ao carregar projetos:", error);
 //     }
@@ -456,7 +459,15 @@
 //   return (
 //     <div>
 //       {projects.map((project) => (
-//         <Card key={project.id} sx={{ width: '800px', borderRadius: '16px', boxShadow: 3, marginBottom: '20px' }}>
+//         <Card
+//           key={project.id}
+//           sx={{
+//             width: "800px",
+//             borderRadius: "16px",
+//             boxShadow: 3,
+//             marginBottom: "20px",
+//           }}
+//         >
 //           <CardHeader
 //             avatar={
 //               <Avatar sx={{ bgcolor: red[500] }} aria-label="user-profile">
@@ -474,24 +485,33 @@
 //           <CardMedia
 //             component="img"
 //             height="400"
-//             image={project.imagem || 'caminho/para/imagem/default.jpg'}
+//             image={project.imagem || "caminho/para/imagem/default.jpg"}
 //             alt={project.titulo}
 //           />
 //           <CardContent>
-//             <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 1 }}>
+//             <Typography
+//               variant="h6"
+//               sx={{ fontWeight: "bold", marginBottom: 1 }}
+//             >
 //               {project.titulo}
 //             </Typography>
-//             <Typography variant="subtitle1" sx={{ fontWeight: 'bold', marginTop: 2 }}>
+//             <Typography
+//               variant="subtitle1"
+//               sx={{ fontWeight: "bold", marginTop: 2 }}
+//             >
 //               Autores:
 //             </Typography>
 //             <Typography variant="body2" color="text.secondary">
 //               {project.autores}
 //             </Typography>
-//             <Typography variant="subtitle1" sx={{ fontWeight: 'bold', marginTop: 2 }}>
+//             <Typography
+//               variant="subtitle1"
+//               sx={{ fontWeight: "bold", marginTop: 2 }}
+//             >
 //               Categorias:
 //             </Typography>
 //             <Typography variant="body2" color="text.secondary">
-//               {project.categoria.join(', ')}
+//               {project.categoria.join(", ")}
 //             </Typography>
 //           </CardContent>
 //           <CardActions disableSpacing>
@@ -512,8 +532,13 @@
 //           </CardActions>
 //           <Collapse in={expanded} timeout="auto" unmountOnExit>
 //             <CardContent>
-//               <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
-//                 Detalhes adicionais sobre o projeto. <br/><br/>
+//               <Typography
+//                 variant="body2"
+//                 color="text.secondary"
+//                 sx={{ marginBottom: 2 }}
+//               >
+//                 Detalhes adicionais sobre o projeto. <br />
+//                 <br />
 //                 {project.descricao}
 //               </Typography>
 //             </CardContent>
@@ -525,26 +550,196 @@
 // }
 
 
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+/////////////////////////////// filtro fincionando 05/11 /////////////////////////////////
 
-const BASE_URL = 'http://localhost:3000/projetos';
+// import * as React from "react";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { styled } from "@mui/material/styles";
+// import Card from "@mui/material/Card";
+// import CardHeader from "@mui/material/CardHeader";
+// import CardMedia from "@mui/material/CardMedia";
+// import CardContent from "@mui/material/CardContent";
+// import CardActions from "@mui/material/CardActions";
+// import Collapse from "@mui/material/Collapse";
+// import Avatar from "@mui/material/Avatar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import { red } from "@mui/material/colors";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import ShareIcon from "@mui/icons-material/Share";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+// const BASE_URL = "http://localhost:3000/projetos";
+
+// interface Project {
+//   id: number;
+//   titulo: string;
+//   descricao: string;
+//   autores: string;
+//   categoria: string[];
+//   dataPostagem: string;
+//   imagem: string;
+// }
+
+// interface ProjectCardProps {
+//   buscarProjeto: string;
+// }
+
+// const ExpandMore = styled(IconButton, {
+//   shouldForwardProp: (prop) => prop !== "expand",
+// })<{ expand: boolean }>(({ theme, expand }) => ({
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+//   transform: expand ? "rotate(180deg)" : "rotate(0deg)",
+// }));
+
+// export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
+//   const [expanded, setExpanded] = useState(false);
+//   const [projects, setProjects] = useState<Project[]>([]);
+
+//   const handleExpandClick = () => {
+//     setExpanded(!expanded);
+//   };
+
+//   const loadProjects = async () => {
+//     try {
+//       const response = await axios.get(BASE_URL);
+//       const sortedProjects = response.data.sort(
+//         (a: Project, b: Project) =>
+//           new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
+//       );
+//       setProjects(sortedProjects);
+//     } catch (error) {
+//       console.error("Erro ao carregar projetos:", error);
+//     }
+//   };
+
+//   const projetosFiltrados = projects.filter((project) =>
+//     project.autores.toLowerCase().includes(buscarProjeto.toLowerCase())
+//   );
+
+//   useEffect(() => {
+//     loadProjects();
+//   }, []);
+
+//   return (
+//     <div>
+//       {Array.isArray(projetosFiltrados) && projetosFiltrados.map((project) => (
+//         <Card
+//           key={project.id}
+//           sx={{
+//             width: "800px",
+//             borderRadius: "16px",
+//             boxShadow: 3,
+//             marginBottom: "20px",
+//           }}
+//         >
+//           <CardHeader
+//             avatar={
+//               <Avatar sx={{ bgcolor: red[500] }} aria-label="user-profile">
+//                 <img src={project.imagem} alt={project.titulo} />
+//               </Avatar>
+//             }
+//             action={
+//               <IconButton aria-label="settings">
+//                 <MoreVertIcon />
+//               </IconButton>
+//             }
+//             title={project.autores}
+//             subheader={project.dataPostagem}
+//           />
+//           <CardMedia
+//             component="img"
+//             height="400"
+//             image={project.imagem || "caminho/para/imagem/default.jpg"}
+//             alt={project.titulo}
+//           />
+//           <CardContent>
+//             <Typography
+//               variant="h6"
+//               sx={{ fontWeight: "bold", marginBottom: 1 }}
+//             >
+//               {project.titulo}
+//             </Typography>
+//             <Typography
+//               variant="subtitle1"
+//               sx={{ fontWeight: "bold", marginTop: 2 }}
+//             >
+//               Autores:
+//             </Typography>
+//             <Typography variant="body2" color="text.secondary">
+//               {project.autores}
+//             </Typography>
+//             <Typography
+//               variant="subtitle1"
+//               sx={{ fontWeight: "bold", marginTop: 2 }}
+//             >
+//               Categorias:
+//             </Typography>
+//             <Typography variant="body2" color="text.secondary">
+//               {project.categoria.join(", ")}
+//             </Typography>
+//           </CardContent>
+//           <CardActions disableSpacing>
+//             <IconButton aria-label="add to favorites">
+//               <FavoriteIcon />
+//             </IconButton>
+//             <IconButton aria-label="share">
+//               <ShareIcon />
+//             </IconButton>
+//             <ExpandMore
+//               expand={expanded}
+//               onClick={handleExpandClick}
+//               aria-expanded={expanded}
+//               aria-label="show more"
+//             >
+//               <ExpandMoreIcon />
+//             </ExpandMore>
+//           </CardActions>
+//           <Collapse in={expanded} timeout="auto" unmountOnExit>
+//             <CardContent>
+//               <Typography
+//                 variant="body2"
+//                 color="text.secondary"
+//                 sx={{ marginBottom: 2 }}
+//               >
+//                 Detalhes adicionais sobre o projeto. <br />
+//                 <br />
+//                 {project.descricao}
+//               </Typography>
+//             </CardContent>
+//           </Collapse>
+//         </Card>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+import * as React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { styled } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import Avatar from "@mui/material/Avatar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { red } from "@mui/material/colors";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+const BASE_URL = "http://localhost:3000/projetos";
 
 interface Project {
   id: number;
@@ -554,31 +749,26 @@ interface Project {
   categoria: string[];
   dataPostagem: string;
   imagem: string;
-}
-
-interface ExpandMoreProps {
-  expand: boolean;
+  fotoPerfil?: string;
 }
 
 interface ProjectCardProps {
-  searchText: string;
+  buscarProjeto: string;
 }
 
-
 const ExpandMore = styled(IconButton, {
-  shouldForwardProp: (prop) => prop !== 'expand',
+  shouldForwardProp: (prop) => prop !== "expand",
 })<{ expand: boolean }>(({ theme, expand }) => ({
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
   }),
-  transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
+  transform: expand ? "rotate(180deg)" : "rotate(0deg)",
 }));
 
-export default function ProjectCard({searchText}: ProjectCardProps) {
+export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [projects, setProjects] = useState<Project[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -587,40 +777,40 @@ export default function ProjectCard({searchText}: ProjectCardProps) {
   const loadProjects = async () => {
     try {
       const response = await axios.get(BASE_URL);
-      const sortedProjects = response.data.sort((a: Project, b: Project) => 
-        new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
+      const sortedProjects = response.data.sort(
+        (a: Project, b: Project) =>
+          new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
       );
       setProjects(sortedProjects);
-      setFilteredProjects(sortedProjects); // Inicialmente mostra todos os projetos
     } catch (error) {
       console.error("Erro ao carregar projetos:", error);
     }
   };
 
+  const projetosFiltrados = projects.filter((project) =>
+    project.autores.toLowerCase().includes(buscarProjeto.toLowerCase())
+  );
+
   useEffect(() => {
     loadProjects();
   }, []);
 
-  useEffect(() => {
-    // Filtro pelo texto de busca
-    const lowerCaseSearchText = searchText.toLowerCase();
-    setFilteredProjects(
-      projects.filter(project => 
-        project.titulo.toLowerCase().includes(lowerCaseSearchText) ||
-        project.descricao.toLowerCase().includes(lowerCaseSearchText) ||
-        project.autores.toLowerCase().includes(lowerCaseSearchText)
-      )
-    );
-  }, [searchText, projects]);
-
   return (
     <div>
-      {projects.map((project) => (
-        <Card key={project.id} sx={{ width: '800px', borderRadius: '16px', boxShadow: 3, marginBottom: '20px' }}>
+      {Array.isArray(projetosFiltrados) && projetosFiltrados.map((project) => (
+        <Card
+          key={project.id}
+          sx={{
+            width: "800px",
+            borderRadius: "16px",
+            boxShadow: 3,
+            marginBottom: "20px",
+          }}
+        >
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="user-profile">
-                <img src={project.imagem} alt={project.titulo} />
+                <img src={project.fotoPerfil} alt="foto de perfil" />
               </Avatar>
             }
             action={
@@ -634,24 +824,33 @@ export default function ProjectCard({searchText}: ProjectCardProps) {
           <CardMedia
             component="img"
             height="400"
-            image={project.imagem || 'caminho/para/imagem/default.jpg'}
+            image={project.imagem || "caminho/para/imagem/default.jpg"}
             alt={project.titulo}
           />
           <CardContent>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 1 }}>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", marginBottom: 1 }}
+            >
               {project.titulo}
             </Typography>
-            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', marginTop: 2 }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ fontWeight: "bold", marginTop: 2 }}
+            >
               Autores:
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {project.autores}
             </Typography>
-            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', marginTop: 2 }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ fontWeight: "bold", marginTop: 2 }}
+            >
               Categorias:
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {project.categoria.join(', ')}
+              {project.categoria.join(", ")}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
@@ -672,8 +871,13 @@ export default function ProjectCard({searchText}: ProjectCardProps) {
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
-                Detalhes adicionais sobre o projeto. <br/><br/>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ marginBottom: 2 }}
+              >
+                Detalhes adicionais sobre o projeto. <br />
+                <br />
                 {project.descricao}
               </Typography>
             </CardContent>

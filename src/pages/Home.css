@@ -13,3 +13,13 @@
     flex-wrap: wrap;
     gap: 50px;
 }
+
+.perfil{
+    /* margin-top: 30px; */
+    margin-left: 200px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}

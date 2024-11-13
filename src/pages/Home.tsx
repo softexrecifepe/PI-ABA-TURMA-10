@@ -7,16 +7,16 @@ import FloatingActionButton from "../components/buttonAdd/buttonAdd";
 import { useState } from "react";
 
 const Home = () => {
-  const [searchText, setSearchText] = useState("");
+  const [buscarProjeto, setBuscarProjeto] = useState("");
   return (
     <>
-      <Navbar onSearch={setSearchText}/>
+      <Navbar setBuscarProjeto={setBuscarProjeto}/>
       <div className="conteudo">
         <Sidebar />
         {/* <button> <Link to='/cadastro'> Cadastro</Link></button>
         <button> <Link to='/login'>Login</Link></button> */}
 
-        <div className="projetos"><RecipeReviewCard searchText={searchText}/></div>
+        <div className="projetos"><RecipeReviewCard buscarProjeto={buscarProjeto}/></div>
         <FloatingActionButton/>
       </div>
     </>

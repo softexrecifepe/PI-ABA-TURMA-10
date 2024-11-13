@@ -27,9 +27,10 @@
   }
   
   .navbar-logo span {
+    color: #0a3161;
     font-size: 16px;
     font-weight: bold;
-    opacity: 80%;
+    opacity: 70%;
   }
   
   .navbar-right {
@@ -73,4 +74,3 @@
     cursor: pointer;
     padding-right: 30px;
   }
-  
