@@ -23,28 +23,28 @@ const GridComplexExample: React.FC = () => {
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>CNPJ</Form.Label>
-          <Form.Control ref={ref} type="text" placeholder="00.000.000/0000-00" />
+          <Form.Control id='input' ref={ref} type="text" placeholder="00.000.000/0000-00" />
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridPassword">
           <Form.Label>Nome</Form.Label>
-          <Form.Control type="text" placeholder="Nome" />
+          <Form.Control id='input' type="text" placeholder="Nome" />
         </Form.Group>
       </Row>
 
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Nome Fantasia</Form.Label>
-        <Form.Control placeholder="Nome da empresa" />
+        <Form.Control id='input' placeholder="Nome da empresa" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress2">
         <Form.Label>Contato Representante</Form.Label>
-        <Form.Control ref={foneref} placeholder="(99)99999-9999" />
+        <Form.Control id='input' ref={foneref} placeholder="(99)99999-9999" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGridAddress3">
         <Form.Label>Dominio</Form.Label>
-        <Form.Control type="email"  placeholder="Ex: email@suaempresa.com" />
+        <Form.Control id='input' type="email"  placeholder="Ex: email@suaempresa.com" />
       </Form.Group>
       <div className='botao'> 
       <Button style={{backgroundColor:'#0A3161'}} type="submit">

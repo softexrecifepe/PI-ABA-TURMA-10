@@ -1,6 +1,6 @@
 
 form {
-    border-radius: solid 10px ;
+    border-radius: 10px ;
     width: 800px;
     margin-left: 250px;
 }
@@ -8,4 +8,9 @@ form {
 .botao {
     display: flex;
     justify-content: center;
+}
+
+#input{
+    border: solid 1px;
+    color: #0A3161;
 }
