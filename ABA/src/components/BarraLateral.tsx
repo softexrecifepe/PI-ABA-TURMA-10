@@ -15,22 +15,19 @@ const BarraLateral: React.FC = () => {
     return (
         <>
         <div className='barra-lateral'>
-        <div className='filtrousuario'>
-            <p>Filtros de Usuarios</p>
-        </div>
+            
         <div className='selecionar'>
-            <div>
+            <div className='bttsel'>
+            <p className='filtrousuario'>Filtros de Usuarios</p>
                 <label className='text' htmlFor="select1">Ano:</label>
-                <select id="select1" value={opcaoSelecionada1} onChange={handleChange1}>
+                <select className="select" value={opcaoSelecionada1} onChange={handleChange1}>
                     <option value="" disabled>Selecione uma opção</option>
                     <option value="opcao1">2024</option>
                     <option value="opcao2">2023</option>
                     <option value="opcao3">2022</option>
                 </select>
-            </div>
-            <div style={{ marginTop: '16px' }}>
                 <label className='text' htmlFor="select2">Mes:</label>
-                <select id="select2" value={opcaoSelecionada2} onChange={handleChange2}>
+                <select className="select" value={opcaoSelecionada2} onChange={handleChange2}>
                     <option value="" disabled>Selecione uma opção</option>
                     <option value="opcaoA">Todos</option>
                     <option value="opcaoB">6 meses</option>
@@ -38,7 +35,7 @@ const BarraLateral: React.FC = () => {
                 </select>
             </div>
         </div>
-        <div className="container">
+        <div className="container2">
     <p className="filtro">Filtros de projetos</p>
         </div>
     </div>

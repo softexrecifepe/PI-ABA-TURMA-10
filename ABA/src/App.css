@@ -69,7 +69,7 @@ input {
 .barra-lateral {
   background-color: #0A3161;
   width: 400px;
-  height: 800px;
+  height: 600px;
   margin-left: 1400px;
   margin-top: 80px;
   border-radius: 20px;
@@ -86,11 +86,11 @@ select {
   margin-top: 100px;
 }
 
-.container {
+.container2 {
   display: flex;
   justify-content: center;
   align-items: center;     
-  height: 100vh;           
+  height: 80vh;           
 }
 
 .filtro {
@@ -100,17 +100,26 @@ select {
 
 .filtrousuario{
   text-align: center;
-  width: 43vh;
   font-size: 20px;
   color: #ffffff;
+  height: 50px;
+  margin-bottom: auto;
+  padding-top: 20px;
 }
 
 .text{
+  display: block;
   
 }
 
+.bttsel{
+  height: 200px;
+}
 
 
+.select{
+  display: table-column;
+}
 
 
 
