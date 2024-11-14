@@ -72,6 +72,7 @@ interface Usuario {
     id: number;
     emailInstitucional: string;
     senha: string;
+    fotoPerfil: string;
 }
 
 const BASE_URL = "http://localhost:3000/Usuario";
@@ -94,6 +95,11 @@ const Login: React.FC = () => {
             if (usuario) {
                 console.log('Login bem-sucedido:', usuario);
                 alert("Login bem-sucedido!");
+                localStorage.setItem("user", JSON.stringify({
+                    id: usuario.id,
+                    email: usuario.emailInstitucional,
+                    fotoPerfil: usuario.fotoPerfil || "",
+                }));
                 // Redirecionar para a página principal ou outra página desejada
                 navigate('/'); // ajuste o caminho conforme necessário
             } else {

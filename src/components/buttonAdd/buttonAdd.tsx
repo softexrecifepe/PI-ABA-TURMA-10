@@ -121,7 +121,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IconButton, Dialog, DialogContent, DialogTitle, TextField, Button, Typography, IconButtonProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -159,6 +159,13 @@ const FloatingActionButton: React.FC = () => {
   const [dataPostagem, setDataPostagem] = useState('');
   const [imagem, setImagem] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Verificar se o usuário está logado ao carregar o componente
+    const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
+    setIsUserLoggedIn(storedUser !== null);
+  }, []);
 
   const handleClickOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -184,6 +191,10 @@ const FloatingActionButton: React.FC = () => {
       console.error('Erro ao cadastrar o projeto:', error);
     }
   };
+
+  if (!isUserLoggedIn) {
+    return null;
+  }
 
   return (
     <>

@@ -549,7 +549,6 @@
 //   );
 // }
 
-
 /////////////////////////////// filtro fincionando 05/11 /////////////////////////////////
 
 // import * as React from "react";
@@ -719,7 +718,6 @@
 //   );
 // }
 
-
 import * as React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -733,7 +731,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -779,7 +777,8 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
       const response = await axios.get(BASE_URL);
       const sortedProjects = response.data.sort(
         (a: Project, b: Project) =>
-          new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
+          new Date(b.dataPostagem).getTime() -
+          new Date(a.dataPostagem).getTime()
       );
       setProjects(sortedProjects);
     } catch (error) {
@@ -797,93 +796,104 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
 
   return (
     <div>
-      {Array.isArray(projetosFiltrados) && projetosFiltrados.map((project) => (
-        <Card
-          key={project.id}
-          sx={{
-            width: "800px",
-            borderRadius: "16px",
-            boxShadow: 3,
-            marginBottom: "20px",
-          }}
-        >
-          <CardHeader
-            avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="user-profile">
-                <img src={project.fotoPerfil} alt="foto de perfil" />
-              </Avatar>
-            }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={project.autores}
-            subheader={project.dataPostagem}
-          />
-          <CardMedia
-            component="img"
-            height="400"
-            image={project.imagem || "caminho/para/imagem/default.jpg"}
-            alt={project.titulo}
-          />
-          <CardContent>
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: "bold", marginBottom: 1 }}
-            >
-              {project.titulo}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ fontWeight: "bold", marginTop: 2 }}
-            >
-              Autores:
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {project.autores}
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              sx={{ fontWeight: "bold", marginTop: 2 }}
-            >
-              Categorias:
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {project.categoria.join(", ")}
-            </Typography>
-          </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+      {Array.isArray(projetosFiltrados) &&
+        projetosFiltrados.map((project) => (
+          <Card
+            key={project.id}
+            sx={{
+              width: "800px",
+              borderRadius: "16px",
+              boxShadow: 3,
+              marginBottom: "20px",
+            }}
+          >
+            <CardHeader
+              avatar={
+                <Avatar sx={{ bgcolor: grey }} aria-label="user-profile">
+                  <img
+                    src={
+                      project.fotoPerfil || "caminho/para/imagem/default.jpg"
+                    }
+                    alt="foto de perfil do dono da postagem"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover", 
+                    }}
+                  />
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title={project.autores}
+              subheader={project.dataPostagem}
+            />
+            <CardMedia
+              component="img"
+              height="400"
+              image={project.imagem || "caminho/para/imagem/default.jpg"}
+              alt={project.titulo}
+            />
             <CardContent>
               <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ marginBottom: 2 }}
+                variant="h6"
+                sx={{ fontWeight: "bold", marginBottom: 1 }}
               >
-                Detalhes adicionais sobre o projeto. <br />
-                <br />
-                {project.descricao}
+                {project.titulo}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontWeight: "bold", marginTop: 2 }}
+              >
+                Autores:
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {project.autores}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ fontWeight: "bold", marginTop: 2 }}
+              >
+                Categorias:
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {project.categoria.join(", ")}
               </Typography>
             </CardContent>
-          </Collapse>
-        </Card>
-      ))}
+            <CardActions disableSpacing>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+              <ExpandMore
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ marginBottom: 2 }}
+                >
+                  Detalhes adicionais sobre o projeto. <br />
+                  <br />
+                  {project.descricao}
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        ))}
     </div>
   );
 }

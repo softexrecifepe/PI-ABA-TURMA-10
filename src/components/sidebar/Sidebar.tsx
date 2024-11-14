@@ -32,15 +32,29 @@
 
 
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar: React.FC = () => {
   const location = useLocation();
   const [activePath, setActivePath] = useState(location.pathname);
+  const navigate = useNavigate();
 
   const handleSetActive = (path: string) => {
     setActivePath(path);
+  };
+
+  const handleLogout = () => {
+    // Exibe o prompt de confirmação para o logout
+    const confirmLogout = window.confirm("Você tem certeza que deseja sair da aplicação?");
+
+    if (confirmLogout) {
+      // Limpa o localStorage
+      localStorage.removeItem("user"); // Remove as informações do usuário
+
+      // Redireciona o usuário para a página de login ou a página inicial
+      navigate("/");
+    }
   };
 
   return (
@@ -76,9 +90,9 @@ const Sidebar: React.FC = () => {
             <li>⚙️ Configuração</li>
           </Link>
           <Link
-            to="/logout"
+            to="/"
             className={`sidebar-item ${activePath === "/logout" ? "active" : ""}`}
-            onClick={() => handleSetActive("/logout")}
+            onClick={handleLogout}
           >
             <li>🚪 Logout</li>
           </Link>

@@ -10,7 +10,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -27,9 +27,10 @@ interface Project {
   dataPostagem: string;
   imagem: string;
   criadorId : string;
+  fotoPerfil: string;
 }
 
-const userId = "d6bc"; 
+// const userId = "d6bc"; 
 
 interface ProjectCardProps {
   buscarProjeto: string;
@@ -58,17 +59,27 @@ export default function ProjectCardUser({ buscarProjeto }: ProjectCardProps) {
     try {
       const response = await axios.get(BASE_URL);
       console.log(response.data);
-      
-      // Filtrar os projetos para incluir apenas aqueles com criadorId igual ao userId
-      const userProjects = response.data.filter((project: Project) => project.criadorId === userId);
-      
-      // Ordenar os projetos filtrados por data de postagem
-      const sortedProjects = userProjects.sort(
-        (a: Project, b: Project) =>
-          new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
-      );
 
-      setProjects(sortedProjects);
+      const user = JSON.parse(localStorage.getItem("user") || "null");
+      const userId = user ? user.id : null;
+
+      if(userId){
+
+        // Filtrar os projetos para incluir apenas aqueles com criadorId igual ao userId
+        const userProjects = response.data.filter((project: Project) => project.criadorId === userId);
+        
+        // Ordenar os projetos filtrados por data de postagem
+        const sortedProjects = userProjects.sort(
+          (a: Project, b: Project) =>
+            new Date(b.dataPostagem).getTime() - new Date(a.dataPostagem).getTime()
+        );
+  
+        setProjects(sortedProjects);
+      }else{
+        console.log("Usuário não logado");
+        setProjects([]);
+      }
+      
     } catch (error) {
       console.error("Erro ao carregar projetos:", error);
     }
@@ -97,8 +108,20 @@ export default function ProjectCardUser({ buscarProjeto }: ProjectCardProps) {
         >
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="user-profile">
-                <img src={project.imagem} alt={project.titulo} />
+              <Avatar
+                sx={{ bgcolor: grey }}
+                aria-label="user-profile"
+              >
+                {/* Exibindo a foto de perfil, se não houver, uma imagem padrão */}
+                <img
+                  src={project.fotoPerfil || "/default-avatar.png"} // Fallback para imagem padrão
+                  alt={project.autores}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover", // Assegura que a imagem se ajuste ao avatar
+                  }}
+                />
               </Avatar>
             }
             action={
