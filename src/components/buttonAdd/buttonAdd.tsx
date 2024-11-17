@@ -291,8 +291,187 @@
 // export default FloatingActionButton;
 
 
+// import React, { useState, useEffect } from 'react';
+// import { IconButton, Dialog, DialogContent, DialogTitle, TextField, Button, Typography, IconButtonProps } from '@mui/material';
+// import { styled } from '@mui/material/styles';
+// import AddCircleIcon from '@mui/icons-material/AddCircle';
+// import CloseIcon from '@mui/icons-material/Close';
+// import axios from 'axios';
+
+// const BASE_URL = 'http://localhost:3000/projetos';
+
+// const StyledButton = styled(IconButton)<IconButtonProps>(({ theme }) => ({
+//   position: 'fixed',
+//   bottom: theme.spacing(2),
+//   right: theme.spacing(2),
+//   width: '60px',
+//   height: '60px',
+//   transition: 'transform 0.5s',
+//   '&:hover': {
+//     transform: 'scale(1.2)',
+//   },
+// }));
+
+// const StyledDialogTitle = styled(DialogTitle)(({ theme }) => ({
+//   display: 'flex',
+//   justifyContent: 'space-between',
+//   alignItems: 'center',
+//   padding: theme.spacing(2),
+// }));
+
+// const FloatingActionButton: React.FC = () => {
+//   const [open, setOpen] = useState(false);
+//   const [titulo, setTitulo] = useState('');
+//   const [descricao, setDescricao] = useState('');
+//   const [autores, setAutores] = useState('');
+//   const [categoria, setCategoria] = useState('');
+//   const [dataPostagem, setDataPostagem] = useState('');
+//   const [imagem, setImagem] = useState('');
+//   const [linkDrive, setLinkDrive] = useState('');
+//   const [successMessage, setSuccessMessage] = useState('');
+//   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+//   const [fotoPerfil, setFotoPerfil] = useState('');
+//   const [criadorId, setCriadorId] = useState('');
+
+//   useEffect(() => {
+//     // Verificar se o usuário está logado ao carregar o componente
+//     const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
+//     if (storedUser) {
+//       setIsUserLoggedIn(true);
+//       setFotoPerfil(storedUser.fotoPerfil);  // Foto do perfil
+//       setCriadorId(storedUser.id);  // ID do usuário logado
+//     } else {
+//       setIsUserLoggedIn(false);
+//     }
+//   }, []);
+
+//   const handleClickOpen = () => setOpen(true);
+//   const handleClose = () => setOpen(false);
+
+//   const handleSubmit = async () => {
+//     // Criar o novo projeto com os dados e incluir fotoPerfil e criadorId
+//     const novoProjeto = {
+//       titulo,
+//       descricao,
+//       autores,
+//       categoria: categoria.split(',').map(cat => cat.trim()), // Divide categorias por vírgula
+//       dataPostagem,
+//       imagem,
+//       linkDrive,
+//       fotoPerfil, // Foto de perfil do usuário logado
+//       criadorId,  // ID do usuário logado
+//     };
+
+//     try {
+//       await axios.post(BASE_URL, novoProjeto);
+//       setSuccessMessage('Projeto cadastrado com sucesso!');
+//       setTimeout(() => {
+//         setSuccessMessage('');
+//         handleClose();
+//       }, 2000);
+//     } catch (error) {
+//       console.error('Erro ao cadastrar o projeto:', error);
+//     }
+//   };
+
+//   if (!isUserLoggedIn) {
+//     return null;
+//   }
+
+//   return (
+//     <>
+//       <StyledButton color="primary" onClick={handleClickOpen}>
+//         <AddCircleIcon fontSize="large" />
+//       </StyledButton>
+
+//       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+//         <StyledDialogTitle>
+//           <Typography variant="h6" color="info" style={{color: '#000000' }}>Publicar Novo Projeto</Typography>
+//           <IconButton onClick={handleClose} color="error">
+//             <CloseIcon />
+//           </IconButton>
+//         </StyledDialogTitle>
+
+//         <DialogContent dividers>
+//           <TextField
+//             label="Título"
+//             fullWidth
+//             margin="normal"
+//             value={titulo}
+//             onChange={(e) => setTitulo(e.target.value)}
+//           />
+//           <TextField
+//             label="Descrição"
+//             fullWidth
+//             margin="normal"
+//             multiline
+//             rows={4}
+//             value={descricao}
+//             onChange={(e) => setDescricao(e.target.value)}
+//           />
+//           <TextField
+//             label="Autores"
+//             fullWidth
+//             margin="normal"
+//             value={autores}
+//             onChange={(e) => setAutores(e.target.value)}
+//           />
+//           <TextField
+//             label="Categoria (separadas por vírgula)"
+//             fullWidth
+//             margin="normal"
+//             value={categoria}
+//             onChange={(e) => setCategoria(e.target.value)}
+//           />
+//           <TextField
+//             label="Data de Postagem"
+//             type="date"
+//             fullWidth
+//             margin="normal"
+//             value={dataPostagem}
+//             onChange={(e) => setDataPostagem(e.target.value)}
+//             InputLabelProps={{ shrink: true }}
+//           />
+//           <TextField
+//             label="URL da Imagem"
+//             fullWidth
+//             margin="normal"
+//             value={imagem}
+//             onChange={(e) => setImagem(e.target.value)}
+//           />
+//           <TextField
+//             label="Link do drive"
+//             fullWidth
+//             margin="normal"
+//             value={linkDrive}
+//             onChange={(e) => setLinkDrive(e.target.value)}
+//           />
+
+//           {successMessage && (
+//             <Typography color="primary" variant="body2" align="center" style={{ marginTop: '16px' }}>
+//               {successMessage}
+//             </Typography>
+//           )}
+
+//           <Button
+//             variant="contained"
+//             color="primary"
+//             fullWidth
+//             style={{ marginTop: '16px' }}
+//             onClick={handleSubmit}
+//           >
+//             Publicar
+//           </Button>
+//         </DialogContent>
+//       </Dialog>
+//     </>
+//   );
+// };
+
+// export default FloatingActionButton;
+
 import React, { useState, useEffect } from 'react';
-import { IconButton, Dialog, DialogContent, DialogTitle, TextField, Button, Typography, IconButtonProps } from '@mui/material';
+import { IconButton, Dialog, DialogContent, DialogTitle, TextField, Button, Typography, IconButtonProps, Checkbox, FormControlLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CloseIcon from '@mui/icons-material/Close';
@@ -332,14 +511,14 @@ const FloatingActionButton: React.FC = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [fotoPerfil, setFotoPerfil] = useState('');
   const [criadorId, setCriadorId] = useState('');
+  const [isChecked, setIsChecked] = useState(false); // Novo estado para o checkbox
 
   useEffect(() => {
-    // Verificar se o usuário está logado ao carregar o componente
     const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
     if (storedUser) {
       setIsUserLoggedIn(true);
-      setFotoPerfil(storedUser.fotoPerfil);  // Foto do perfil
-      setCriadorId(storedUser.id);  // ID do usuário logado
+      setFotoPerfil(storedUser.fotoPerfil);
+      setCriadorId(storedUser.id);
     } else {
       setIsUserLoggedIn(false);
     }
@@ -349,17 +528,31 @@ const FloatingActionButton: React.FC = () => {
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    // Criar o novo projeto com os dados e incluir fotoPerfil e criadorId
+    // Verificar se todos os campos estão preenchidos e o checkbox marcado
+    if (
+      !titulo || 
+      !descricao || 
+      !autores || 
+      !categoria || 
+      !dataPostagem || 
+      !imagem || 
+      !linkDrive || 
+      !isChecked
+    ) {
+      alert('Por favor, preencha todos os campos e aceite a Licença Creative Commons.');
+      return;
+    }
+
     const novoProjeto = {
       titulo,
       descricao,
       autores,
-      categoria: categoria.split(',').map(cat => cat.trim()), // Divide categorias por vírgula
+      categoria: categoria.split(',').map(cat => cat.trim()),
       dataPostagem,
       imagem,
       linkDrive,
-      fotoPerfil, // Foto de perfil do usuário logado
-      criadorId,  // ID do usuário logado
+      fotoPerfil,
+      criadorId,
     };
 
     try {
@@ -386,7 +579,7 @@ const FloatingActionButton: React.FC = () => {
 
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <StyledDialogTitle>
-          <Typography variant="h6" color="info" style={{color: '#000000' }}>Publicar Novo Projeto</Typography>
+          <Typography variant="h6" color="info" style={{ color: '#000000' }}>Publicar Novo Projeto</Typography>
           <IconButton onClick={handleClose} color="error">
             <CloseIcon />
           </IconButton>
@@ -445,6 +638,21 @@ const FloatingActionButton: React.FC = () => {
             margin="normal"
             value={linkDrive}
             onChange={(e) => setLinkDrive(e.target.value)}
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={isChecked}
+                onChange={(e) => setIsChecked(e.target.checked)}
+                color="primary"
+              />
+            }
+            label={
+              <span style={{display:'flex', textDecoration:'underline'}}>
+                <a style={{color:'black', fontSize:'16px'}} href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Licença Creative Commons </a>
+              </span>
+            }
           />
 
           {successMessage && (
