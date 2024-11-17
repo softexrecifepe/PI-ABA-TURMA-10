@@ -154,6 +154,7 @@ const Sidebar: React.FC = () => {
       // Redireciona o usuário para a página de login ou a página inicial
       navigate("/");
       setIsLoggedIn(false); // Atualiza o estado para refletir que o usuário saiu
+      window.location.reload();
     }
   };
 

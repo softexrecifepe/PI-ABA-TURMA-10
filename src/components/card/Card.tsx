@@ -748,6 +748,7 @@ interface Project {
   dataPostagem: string;
   imagem: string;
   fotoPerfil?: string;
+  linkDrive: string;
 }
 
 interface ProjectCardProps {
@@ -818,7 +819,7 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover", 
+                      objectFit: "cover",
                     }}
                   />
                 </Avatar>
@@ -884,11 +885,31 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ marginBottom: 2 }}
+                  sx={{ fontWeight: "bold", marginBottom: 2}}
                 >
-                  Detalhes adicionais sobre o projeto. <br />
+                  Descrição do projeto: <br />
                   <br />
                   {project.descricao}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    fontWeight: "bold",
+                    marginTop: 2,
+                    color: "text.secondary",
+                  }}
+                >
+                  Link do drive:
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  <a
+                    href={project.linkDrive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "#1976d2" }} // Estilo do link
+                  >
+                    {project.linkDrive}
+                  </a>
                 </Typography>
               </CardContent>
             </Collapse>
