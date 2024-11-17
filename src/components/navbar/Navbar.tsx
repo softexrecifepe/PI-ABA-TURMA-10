@@ -274,7 +274,7 @@ const Navbar: React.FC<NavbarProps> = ({ setBuscarProjeto }) => {
               <Link to="/login">
                 <button className="navbar-btn-login">Login</button>
               </Link>
-              <Link to="/register">
+              <Link to="/cadastro">
                 <button className="navbar-btn-cadastro">Cadastrar</button>
               </Link>
             </div>

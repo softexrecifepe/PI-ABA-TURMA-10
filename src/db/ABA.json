@@ -24,6 +24,14 @@
       "dataNascimento": "21-01-1994",
       "senha": "admin",
       "id": "9bbd"
+    },
+    {
+      "id": "578c",
+      "nome": "userTest",
+      "emailInstitucional": "test@test.com",
+      "emailSecundario": "test1@test.com",
+      "dataNascimento": "2024-07-03",
+      "senha": "123"
     }
   ],
   "projetos": [
@@ -38,7 +46,12 @@
       ],
       "dataPostagem": "2023-11-01",
       "imagem": "https://ufpa.br/wp-content/uploads/2024/07/Amazon-Maker_Foto-Marcelo-Dias.png",
-      "fotoPerfil": "https://cdn.mindminers.com/blog/uploads/2022/07/criar-persona-1.jpg"
+      "fotoPerfil": "https://cdn.mindminers.com/blog/uploads/2022/07/criar-persona-1.jpg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
     },
     {
       "id": "2",
@@ -50,7 +63,12 @@
       ],
       "dataPostagem": "2023-11-02",
       "imagem": "https://jornadaedu.com.br/wp-content/uploads/2021/02/educacao-5-0.png",
-      "fotoPerfil": "https://assets.propmark.com.br/uploads/2022/06/Claudio-Olimpio_DaX.jpg"
+      "fotoPerfil": "https://assets.propmark.com.br/uploads/2022/06/Claudio-Olimpio_DaX.jpg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
     },
     {
       "id": "3",
@@ -61,7 +79,12 @@
         "programação"
       ],
       "dataPostagem": "2023-11-03",
-      "imagem": "https://www.jornaldebarueri.com.br/wp-content/uploads/2022/06/sala-maker-13.jpeg"
+      "imagem": "https://www.jornaldebarueri.com.br/wp-content/uploads/2022/06/sala-maker-13.jpeg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
     },
     {
       "id": "0296",
@@ -75,7 +98,12 @@
       "imagem": "https://www.valuehost.com.br/blog/wp-content/uploads/2016/10/linguagens-de-programacao.jpeg.webp",
       "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
       "linkDrive": "https://www.apple.com/br/education/docs/clube_de_programacao_swift.pdf",
-      "criadorId": "d6bc"
+      "criadorId": "d6bc",
+      "likes": 2,
+      "usersLiked": [
+        "d6bc",
+        "578c"
+      ]
     },
     {
       "id": "cd05",
@@ -89,7 +117,13 @@
       "imagem": "https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2024/07/whatsapp-image-2024-07-31-at-151731-2.jpg",
       "linkDrive": "https://www.instagram.com/softexpernambuco/p/C7y3-tLNqNQ/?img_index=1",
       "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
-      "criadorId": "d6bc"
+      "criadorId": "d6bc",
+      "likes": 3,
+      "usersLiked": [
+        "d6bc",
+        "578c",
+        "ec4a"
+      ]
     },
     {
       "id": "b3ff",
@@ -103,7 +137,12 @@
       "imagem": "https://blog.b2bstack.com.br/wp-content/uploads/2022/01/front-end-banner.jpg",
       "linkDrive": "https://github.com/Janielson-Anjos/fap-2024/tree/main/Calculadora",
       "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
-      "criadorId": "d6bc"
+      "criadorId": "d6bc",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
     }
   ],
   "meusprojetos": [

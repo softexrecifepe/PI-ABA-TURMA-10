@@ -511,6 +511,8 @@ const FloatingActionButton: React.FC = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [fotoPerfil, setFotoPerfil] = useState('');
   const [criadorId, setCriadorId] = useState('');
+  const [likes, setLikes] = useState('');
+  const [usersLiked, setUsersLiked] = useState('');
   const [isChecked, setIsChecked] = useState(false); // Novo estado para o checkbox
 
   useEffect(() => {
@@ -553,6 +555,8 @@ const FloatingActionButton: React.FC = () => {
       linkDrive,
       fotoPerfil,
       criadorId,
+      likes,
+      usersLiked,
     };
 
     try {

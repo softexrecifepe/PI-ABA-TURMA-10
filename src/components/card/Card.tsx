@@ -718,6 +718,432 @@
 //   );
 // }
 
+// import * as React from "react";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { styled } from "@mui/material/styles";
+// import Card from "@mui/material/Card";
+// import CardHeader from "@mui/material/CardHeader";
+// import CardMedia from "@mui/material/CardMedia";
+// import CardContent from "@mui/material/CardContent";
+// import CardActions from "@mui/material/CardActions";
+// import Collapse from "@mui/material/Collapse";
+// import Avatar from "@mui/material/Avatar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import { grey } from "@mui/material/colors";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import ShareIcon from "@mui/icons-material/Share";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+// const BASE_URL = "http://localhost:3000/projetos";
+
+// interface Project {
+//   id: number;
+//   titulo: string;
+//   descricao: string;
+//   autores: string;
+//   categoria: string[];
+//   dataPostagem: string;
+//   imagem: string;
+//   fotoPerfil?: string;
+//   linkDrive: string;
+// }
+
+// interface ProjectCardProps {
+//   buscarProjeto: string;
+// }
+
+// const ExpandMore = styled(IconButton, {
+//   shouldForwardProp: (prop) => prop !== "expand",
+// })<{ expand: boolean }>(({ theme, expand }) => ({
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+//   transform: expand ? "rotate(180deg)" : "rotate(0deg)",
+// }));
+
+// export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
+//   const [expanded, setExpanded] = useState(false);
+//   const [projects, setProjects] = useState<Project[]>([]);
+
+//   const handleExpandClick = () => {
+//     setExpanded(!expanded);
+//   };
+
+//   const loadProjects = async () => {
+//     try {
+//       const response = await axios.get(BASE_URL);
+//       const sortedProjects = response.data.sort(
+//         (a: Project, b: Project) =>
+//           new Date(b.dataPostagem).getTime() -
+//           new Date(a.dataPostagem).getTime()
+//       );
+//       setProjects(sortedProjects);
+//     } catch (error) {
+//       console.error("Erro ao carregar projetos:", error);
+//     }
+//   };
+
+//   const projetosFiltrados = projects.filter((project) =>
+//     project.autores.toLowerCase().includes(buscarProjeto.toLowerCase())
+//   );
+
+//   useEffect(() => {
+//     loadProjects();
+//   }, []);
+
+//   return (
+//     <div>
+//       {Array.isArray(projetosFiltrados) &&
+//         projetosFiltrados.map((project) => (
+//           <Card
+//             key={project.id}
+//             sx={{
+//               width: "800px",
+//               borderRadius: "16px",
+//               boxShadow: 3,
+//               marginBottom: "20px",
+//             }}
+//           >
+//             <CardHeader
+//               avatar={
+//                 <Avatar sx={{ bgcolor: grey }} aria-label="user-profile">
+//                   <img
+//                     src={
+//                       project.fotoPerfil || "caminho/para/imagem/default.jpg"
+//                     }
+//                     alt="foto de perfil do dono da postagem"
+//                     style={{
+//                       width: "100%",
+//                       height: "100%",
+//                       objectFit: "cover",
+//                     }}
+//                   />
+//                 </Avatar>
+//               }
+//               action={
+//                 <IconButton aria-label="settings">
+//                   <MoreVertIcon />
+//                 </IconButton>
+//               }
+//               title={project.autores}
+//               subheader={project.dataPostagem}
+//             />
+//             <CardMedia
+//               component="img"
+//               height="400"
+//               image={project.imagem || "caminho/para/imagem/default.jpg"}
+//               alt={project.titulo}
+//             />
+//             <CardContent>
+//               <Typography
+//                 variant="h6"
+//                 sx={{ fontWeight: "bold", marginBottom: 1 }}
+//               >
+//                 {project.titulo}
+//               </Typography>
+//               <Typography
+//                 variant="subtitle1"
+//                 sx={{ fontWeight: "bold", marginTop: 2 }}
+//               >
+//                 Autores:
+//               </Typography>
+//               <Typography variant="body2" color="text.secondary">
+//                 {project.autores}
+//               </Typography>
+//               <Typography
+//                 variant="subtitle1"
+//                 sx={{ fontWeight: "bold", marginTop: 2 }}
+//               >
+//                 Categorias:
+//               </Typography>
+//               <Typography variant="body2" color="text.secondary">
+//                 {project.categoria.join(", ")}
+//               </Typography>
+//             </CardContent>
+//             <CardActions disableSpacing>
+//               <IconButton aria-label="add to favorites">
+//                 <FavoriteIcon />
+//               </IconButton>
+//               <IconButton aria-label="share">
+//                 <ShareIcon />
+//               </IconButton>
+//               <ExpandMore
+//                 expand={expanded}
+//                 onClick={handleExpandClick}
+//                 aria-expanded={expanded}
+//                 aria-label="show more"
+//               >
+//                 <ExpandMoreIcon />
+//               </ExpandMore>
+//             </CardActions>
+//             <Collapse in={expanded} timeout="auto" unmountOnExit>
+//               <CardContent>
+//                 <Typography
+//                   variant="body2"
+//                   color="text.secondary"
+//                   sx={{ fontWeight: "bold", marginBottom: 2}}
+//                 >
+//                   Descrição do projeto: <br />
+//                   <br />
+//                   {project.descricao}
+//                 </Typography>
+//                 <Typography
+//                   variant="subtitle2"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     marginTop: 2,
+//                     color: "text.secondary",
+//                   }}
+//                 >
+//                   Link do drive:
+//                 </Typography>
+//                 <Typography variant="body2" color="text.secondary">
+//                   <a
+//                     href={project.linkDrive}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     style={{ textDecoration: "none", color: "#1976d2" }} 
+//                   >
+//                     {project.linkDrive}
+//                   </a>
+//                 </Typography>
+//               </CardContent>
+//             </Collapse>
+//           </Card>
+//         ))}
+//     </div>
+//   );
+// }
+
+
+////////////////////////////////// compartilhar /////////////////////////////////////
+// import * as React from "react";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { styled } from "@mui/material/styles";
+// import Card from "@mui/material/Card";
+// import CardHeader from "@mui/material/CardHeader";
+// import CardMedia from "@mui/material/CardMedia";
+// import CardContent from "@mui/material/CardContent";
+// import CardActions from "@mui/material/CardActions";
+// import Collapse from "@mui/material/Collapse";
+// import Avatar from "@mui/material/Avatar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import { grey } from "@mui/material/colors";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import ShareIcon from "@mui/icons-material/Share";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import MoreVertIcon from "@mui/icons-material/MoreVert";
+
+// const BASE_URL = "http://localhost:3000/projetos";
+
+// interface Project {
+//   id: number;
+//   titulo: string;
+//   descricao: string;
+//   autores: string;
+//   categoria: string[];
+//   dataPostagem: string;
+//   imagem: string;
+//   fotoPerfil?: string;
+//   linkDrive: string;
+// }
+
+// interface ProjectCardProps {
+//   buscarProjeto: string;
+// }
+
+// const ExpandMore = styled(IconButton, {
+//   shouldForwardProp: (prop) => prop !== "expand",
+// })<{ expand: boolean }>(({ theme, expand }) => ({
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+//   transform: expand ? "rotate(180deg)" : "rotate(0deg)",
+// }));
+
+// export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
+//   const [expanded, setExpanded] = useState(false);
+//   const [projects, setProjects] = useState<Project[]>([]);
+
+//   const handleExpandClick = () => {
+//     setExpanded(!expanded);
+//   };
+
+//   const loadProjects = async () => {
+//     try {
+//       const response = await axios.get(BASE_URL);
+//       const sortedProjects = response.data.sort(
+//         (a: Project, b: Project) =>
+//           new Date(b.dataPostagem).getTime() -
+//           new Date(a.dataPostagem).getTime()
+//       );
+//       setProjects(sortedProjects);
+//     } catch (error) {
+//       console.error("Erro ao carregar projetos:", error);
+//     }
+//   };
+
+//   const projetosFiltrados = projects.filter((project) =>
+//     project.autores.toLowerCase().includes(buscarProjeto.toLowerCase())
+//   );
+
+//   useEffect(() => {
+//     loadProjects();
+//   }, []);
+
+//   // Função para compartilhar o projeto
+//   const handleShareClick = (project: Project) => {
+//     if (navigator.share) {
+//       navigator
+//         .share({
+//           title: project.titulo,
+//           text: project.descricao,
+//           url: window.location.href + `/projeto/${project.id}`, // URL do projeto (ajustar conforme sua aplicação)
+//         })
+//         .then(() => {
+//           console.log("Projeto compartilhado com sucesso!");
+//         })
+//         .catch((error) => {
+//           console.error("Erro ao compartilhar:", error);
+//         });
+//     } else {
+//       alert("Compartilhamento não é suportado neste navegador.");
+//     }
+//   };
+
+//   return (
+//     <div>
+//       {Array.isArray(projetosFiltrados) &&
+//         projetosFiltrados.map((project) => (
+//           <Card
+//             key={project.id}
+//             sx={{
+//               width: "800px",
+//               borderRadius: "16px",
+//               boxShadow: 3,
+//               marginBottom: "20px",
+//             }}
+//           >
+//             <CardHeader
+//               avatar={
+//                 <Avatar sx={{ bgcolor: grey }} aria-label="user-profile">
+//                   <img
+//                     src={project.fotoPerfil || "caminho/para/imagem/default.jpg"}
+//                     alt="foto de perfil do dono da postagem"
+//                     style={{
+//                       width: "100%",
+//                       height: "100%",
+//                       objectFit: "cover",
+//                     }}
+//                   />
+//                 </Avatar>
+//               }
+//               action={
+//                 <IconButton aria-label="settings">
+//                   <MoreVertIcon />
+//                 </IconButton>
+//               }
+//               title={project.autores}
+//               subheader={project.dataPostagem}
+//             />
+//             <CardMedia
+//               component="img"
+//               height="400"
+//               image={project.imagem || "caminho/para/imagem/default.jpg"}
+//               alt={project.titulo}
+//             />
+//             <CardContent>
+//               <Typography
+//                 variant="h6"
+//                 sx={{ fontWeight: "bold", marginBottom: 1 }}
+//               >
+//                 {project.titulo}
+//               </Typography>
+//               <Typography
+//                 variant="subtitle1"
+//                 sx={{ fontWeight: "bold", marginTop: 2 }}
+//               >
+//                 Autores:
+//               </Typography>
+//               <Typography variant="body2" color="text.secondary">
+//                 {project.autores}
+//               </Typography>
+//               <Typography
+//                 variant="subtitle1"
+//                 sx={{ fontWeight: "bold", marginTop: 2 }}
+//               >
+//                 Categorias:
+//               </Typography>
+//               <Typography variant="body2" color="text.secondary">
+//                 {project.categoria.join(", ")}
+//               </Typography>
+//             </CardContent>
+//             <CardActions disableSpacing>
+//               <IconButton aria-label="add to favorites">
+//                 <FavoriteIcon />
+//               </IconButton>
+//               <IconButton
+//                 aria-label="share"
+//                 onClick={() => handleShareClick(project)} // Chama a função de compartilhamento
+//               >
+//                 <ShareIcon />
+//               </IconButton>
+//               <ExpandMore
+//                 expand={expanded}
+//                 onClick={handleExpandClick}
+//                 aria-expanded={expanded}
+//                 aria-label="show more"
+//               >
+//                 <ExpandMoreIcon />
+//               </ExpandMore>
+//             </CardActions>
+//             <Collapse in={expanded} timeout="auto" unmountOnExit>
+//               <CardContent>
+//                 <Typography
+//                   variant="body2"
+//                   color="text.secondary"
+//                   sx={{ fontWeight: "bold", marginBottom: 2 }}
+//                 >
+//                   Descrição do projeto: <br />
+//                   <br />
+//                   {project.descricao}
+//                 </Typography>
+//                 <Typography
+//                   variant="subtitle2"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     marginTop: 2,
+//                     color: "text.secondary",
+//                   }}
+//                 >
+//                   Link do drive:
+//                 </Typography>
+//                 <Typography variant="body2" color="text.secondary">
+//                   <a
+//                     href={project.linkDrive}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     style={{ textDecoration: "none", color: "#1976d2" }}
+//                   >
+//                     {project.linkDrive}
+//                   </a>
+//                 </Typography>
+//               </CardContent>
+//             </Collapse>
+//           </Card>
+//         ))}
+//     </div>
+//   );
+// }
+
+
 import * as React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -749,6 +1175,8 @@ interface Project {
   imagem: string;
   fotoPerfil?: string;
   linkDrive: string;
+  likes: number;
+  usersLiked: string[]; // Lista de IDs de usuários que curtiram
 }
 
 interface ProjectCardProps {
@@ -768,6 +1196,7 @@ const ExpandMore = styled(IconButton, {
 export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [projects, setProjects] = useState<Project[]>([]);
+  const [user, setUser] = useState<any>(null); // Estado para armazenar o usuário logado
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -791,9 +1220,67 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
     project.autores.toLowerCase().includes(buscarProjeto.toLowerCase())
   );
 
+  // Carregar o usuário logado do localStorage
   useEffect(() => {
+    const loggedUser = localStorage.getItem("user"); // Pega o objeto de usuário armazenado
+    if (loggedUser) {
+      setUser(JSON.parse(loggedUser)); // Armazena o usuário no estado
+    }
     loadProjects();
   }, []);
+
+  // Função para compartilhar o projeto
+  const handleShareClick = (project: Project) => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: project.titulo,
+          text: project.descricao,
+          url: window.location.href + `/projeto/${project.id}`,
+        })
+        .then(() => {
+          console.log("Projeto compartilhado com sucesso!");
+        })
+        .catch((error) => {
+          console.error("Erro ao compartilhar:", error);
+        });
+    } else {
+      alert("Compartilhamento não é suportado neste navegador.");
+    }
+  };
+
+  // Função para curtir o projeto
+  const handleLikeClick = async (project: Project) => {
+    if (!user) {
+      alert("Você precisa estar logado para curtir o projeto!"); // Se o usuário não estiver logado, mostramos um alerta
+      return;
+    }
+
+    const userId = user.id; // Pega o ID do usuário logado
+
+    // Verifica se o usuário já deu like
+    const hasLiked = project.usersLiked.includes(userId);
+
+    // Atualiza a lista de usuários que curtiram e o número de likes
+    const updatedProject = {
+      ...project,
+      likes: hasLiked ? project.likes - 1 : project.likes + 1,
+      usersLiked: hasLiked
+        ? project.usersLiked.filter((id) => id !== userId) // Remove o like do usuário
+        : [...project.usersLiked, userId], // Adiciona o like do usuário
+    };
+
+    try {
+      // Atualiza o projeto no backend
+      await axios.put(`${BASE_URL}/${project.id}`, updatedProject);
+      // Atualiza o estado local com os novos dados
+      setProjects((prevProjects) =>
+        prevProjects.map((p) => (p.id === project.id ? updatedProject : p))
+      );
+    } catch (error) {
+      console.error("Erro ao atualizar like:", error);
+    }
+  };
 
   return (
     <div>
@@ -812,9 +1299,7 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
               avatar={
                 <Avatar sx={{ bgcolor: grey }} aria-label="user-profile">
                   <img
-                    src={
-                      project.fotoPerfil || "caminho/para/imagem/default.jpg"
-                    }
+                    src={project.fotoPerfil || "caminho/para/imagem/default.jpg"}
                     alt="foto de perfil do dono da postagem"
                     style={{
                       width: "100%",
@@ -865,10 +1350,22 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
+              <IconButton
+                aria-label="add to favorites"
+                onClick={() => handleLikeClick(project)}
+                disabled={!user} // Desabilita o botão de like para usuários não logados
+              >
+                <FavoriteIcon
+                  color={project.usersLiked.includes(user?.id) ? "error" : "inherit"} 
+                />
+                <Typography variant="body2" sx={{ marginLeft: 1 }}>
+                  {project.likes}
+                </Typography>
               </IconButton>
-              <IconButton aria-label="share">
+              <IconButton
+                aria-label="share"
+                onClick={() => handleShareClick(project)}
+              >
                 <ShareIcon />
               </IconButton>
               <ExpandMore
@@ -885,7 +1382,7 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ fontWeight: "bold", marginBottom: 2}}
+                  sx={{ fontWeight: "bold", marginBottom: 2 }}
                 >
                   Descrição do projeto: <br />
                   <br />
@@ -906,7 +1403,7 @@ export default function ProjectCard({ buscarProjeto }: ProjectCardProps) {
                     href={project.linkDrive}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: "none", color: "#1976d2" }} // Estilo do link
+                    style={{ textDecoration: "none", color: "#1976d2" }}
                   >
                     {project.linkDrive}
                   </a>
