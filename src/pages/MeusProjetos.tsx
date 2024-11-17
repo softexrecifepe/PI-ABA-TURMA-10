@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import ProjectCard from "../components/card/Card";
 import ProjectCardUser from "../components/cardMeusProjetos/CardUserProjeto";
 import Navbar from "../components/navbar/Navbar";
 import Sidebar from "../components/sidebar/Sidebar";
