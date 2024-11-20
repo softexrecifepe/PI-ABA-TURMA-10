@@ -76,26 +76,25 @@ input {
   margin-bottom: 200px;
 }
 
+
 select {
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
 }
 
-.selecionar{
-  margin-top: 100px;
-}
-
 .container2 {
   display: flex;
   justify-content: center;
   align-items: center;     
-  height: 80vh;           
+  height: 68vh;           
 }
 
 .filtro {
   font-size: 20px;         
   text-align: center;
+  color: white;
+  margin-top: 20px;
 }
 
 .filtrousuario{
@@ -104,22 +103,68 @@ select {
   color: #ffffff;
   height: 50px;
   margin-bottom: auto;
-  padding-top: 20px;
+  padding-top: 13px;
+  margin-right: 70px;
 }
 
 .text{
   display: block;
-  
+  color: white;
 }
 
 .bttsel{
   height: 200px;
+  margin-left: 100px;
 }
 
 
 .select{
   display: table-column;
 }
+
+.opcao {
+  margin-top: -600px;
+  margin-left: 100px;
+}
+
+.icon-profile {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.text-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.titulo2 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  margin-left: 900px;
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+
+
 
 
 

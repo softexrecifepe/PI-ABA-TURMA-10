@@ -10,12 +10,16 @@ import CadastroUsuario from './components/CadastroUsuario';
 import Navbar from './components/Header';
 import BarraLateral from './components/BarraLateral';
 import Graficos from './components/Graficos';
+import Sidebar from './components/SidebarCadastro';
+import Instituicoes from './pages/InstituiçõesCadastro';
+import PerfilAdm from './pages/PerfilAdm';
+
 
 const App: React.FC = () => {
   
   return (
     <>
-    <BarraLateral/>
+    <Instituicoes/>
     </>
   );
 };
