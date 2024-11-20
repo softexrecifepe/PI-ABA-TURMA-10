@@ -1,8 +1,14 @@
 import React from "react";
-import Graficos from "../components/Graficos";
+import BarraLateral from "../components/BarraLateral";
+import Sidebar from "../components/SidebarCadastro";
 
-const Graficos  =()=> {
+const PerfilAdm  =()=> {
     return(
-        <Graficos/>
+        <>
+        <BarraLateral/>
+        <Sidebar/>
+        </>
     )
 };
+
+export default PerfilAdm;

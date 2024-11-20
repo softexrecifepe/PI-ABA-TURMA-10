@@ -19,6 +19,10 @@ const GridComplexExample: React.FC = () => {
   });
 
   return (
+<>
+<div className='titulo'>
+  <h1 className='titulo2'>Cadastro</h1>
+</div>
     <Form>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
@@ -51,7 +55,8 @@ const GridComplexExample: React.FC = () => {
         Cadastrar
       </Button>
       </div>
-    </Form>  
+    </Form> 
+    </>
   );
 };
 
