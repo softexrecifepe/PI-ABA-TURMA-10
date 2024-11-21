@@ -14,7 +14,7 @@
       "emailInstitucional": "test@email.com",
       "emailSecundario": "test@email.com",
       "dataNascimento": "21-01-1994",
-      "senha": "test",
+      "senha": "123",
       "id": "ec4a"
     },
     {
@@ -99,10 +99,11 @@
       "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
       "linkDrive": "https://www.apple.com/br/education/docs/clube_de_programacao_swift.pdf",
       "criadorId": "d6bc",
-      "likes": 2,
+      "likes": 3,
       "usersLiked": [
         "d6bc",
-        "578c"
+        "578c",
+        "ec4a"
       ]
     },
     {
@@ -138,25 +139,13 @@
       "linkDrive": "https://github.com/Janielson-Anjos/fap-2024/tree/main/Calculadora",
       "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
       "criadorId": "d6bc",
-      "likes": 2,
+      "likes": 3,
       "usersLiked": [
         "578c",
-        "d6bc"
+        "d6bc",
+        "ec4a"
       ]
     }
   ],
-  "meusprojetos": [
-    {
-      "id": "3abe",
-      "titulo": "Projeto de front end",
-      "descricao": "Aqui tem um projeto de front end para testes",
-      "autores": "Janielson Anjos",
-      "categoria": [
-        "Programação"
-      ],
-      "dataPostagem": "2024-11-03",
-      "imagem": "https://media.licdn.com/dms/image/D4D12AQHIgHPxuT8wlw/article-cover_image-shrink_720_1280/0/1685473745935?e=2147483647&v=beta&t=-QLIf9wbAoQixbRNmUN0ezhhyBaMBeWW3pUhLJ-4PBw",
-      "criadorId": "d6bc"
-    }
-  ]
+  "projetos-pendentes": []
 }

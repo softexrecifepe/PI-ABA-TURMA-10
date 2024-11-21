@@ -477,7 +477,8 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3000/projetos';
+// const BASE_URL = 'http://localhost:3000/projetos';
+const BASE_URL = 'http://localhost:3000/projetos-pendentes';
 
 const StyledButton = styled(IconButton)<IconButtonProps>(({ theme }) => ({
   position: 'fixed',
@@ -562,6 +563,7 @@ const FloatingActionButton: React.FC = () => {
     try {
       await axios.post(BASE_URL, novoProjeto);
       setSuccessMessage('Projeto cadastrado com sucesso!');
+      alert('Projeto aguardando aprovação pela administração!');
       setTimeout(() => {
         setSuccessMessage('');
         handleClose();
