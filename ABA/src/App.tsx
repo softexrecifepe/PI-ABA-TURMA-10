@@ -19,7 +19,7 @@ const App: React.FC = () => {
   
   return (
     <>
-    <Instituicoes/>
+    <PerfilAdm/>
     </>
   );
 };
