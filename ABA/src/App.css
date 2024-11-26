@@ -70,7 +70,7 @@ input {
   background-color: #0A3161;
   width: 400px;
   height: 600px;
-  margin-left: 1400px;
+  margin-left: 930px;
   margin-top: 80px;
   border-radius: 20px;
   margin-bottom: 200px;
@@ -123,8 +123,9 @@ select {
 }
 
 .opcao {
-  margin-top: -600px;
+  margin-top: -415px;
   margin-left: 100px;
+
 }
 
 .icon-profile {
