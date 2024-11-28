@@ -22,6 +22,19 @@ input {
  background-color: #0A3161;
 }
 
+.bg-body-tertiary{
+  width: 95%;
+  margin-left: 5%;
+}
+
+#basic-nav-dropdown2{
+  margin-left: -350px;
+}
+
+#basic-navbar-nav{
+  margin-left: -350px;
+}
+
 .institui {
   width: 1000px;
   height: 300px;
@@ -70,10 +83,10 @@ input {
   background-color: #0A3161;
   width: 400px;
   height: 600px;
-  margin-left: 930px;
-  margin-top: 80px;
+  margin-left: 1450px;
   border-radius: 20px;
-  margin-bottom: 200px;
+  margin-bottom: 190px;
+  margin-top: 150px;
 }
 
 
@@ -81,13 +94,19 @@ select {
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  overflow: hidden;
 }
+
 
 .container2 {
   display: flex;
   justify-content: center;
   align-items: center;     
-  height: 68vh;           
+  height: 45vh;           
 }
 
 .filtro {
@@ -164,6 +183,9 @@ select {
   font-size: 50px;
 }
 
+.graficos {
+  margin-top: -550px;
+}
 
 
 
