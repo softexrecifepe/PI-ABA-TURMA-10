@@ -1,0 +1,151 @@
+{
+  "Usuario": [
+    {
+      "nome": "Janielson Anjos",
+      "emailInstitucional": "email@email.com",
+      "emailSecundario": "email@email.com",
+      "dataNascimento": "25-01-1994",
+      "senha": "123",
+      "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
+      "id": "d6bc"
+    },
+    {
+      "nome": "test",
+      "emailInstitucional": "test@email.com",
+      "emailSecundario": "test@email.com",
+      "dataNascimento": "21-01-1994",
+      "senha": "123",
+      "id": "ec4a"
+    },
+    {
+      "nome": "admin",
+      "emailInstitucional": "admin",
+      "emailSecundario": "admin",
+      "dataNascimento": "21-01-1994",
+      "senha": "admin",
+      "id": "9bbd"
+    },
+    {
+      "id": "578c",
+      "nome": "userTest",
+      "emailInstitucional": "test@test.com",
+      "emailSecundario": "test1@test.com",
+      "dataNascimento": "2024-07-03",
+      "senha": "123"
+    }
+  ],
+  "projetos": [
+    {
+      "id": "1",
+      "titulo": "Projeto Impressão 3D",
+      "descricao": "Neste projeto, exploramos o potencial da impressão 3D para criar peças personalizadas e funcionais, permitindo a customização e inovação em diversos produtos. Aprenda sobre modelagem 3D e técnicas de impressão que tornam suas ideias uma realidade.",
+      "autores": "Maria",
+      "categoria": [
+        "Impressão 3D",
+        "Modelagem 3D"
+      ],
+      "dataPostagem": "2023-11-01",
+      "imagem": "https://ufpa.br/wp-content/uploads/2024/07/Amazon-Maker_Foto-Marcelo-Dias.png",
+      "fotoPerfil": "https://cdn.mindminers.com/blog/uploads/2022/07/criar-persona-1.jpg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
+    },
+    {
+      "id": "2",
+      "titulo": "Projeto Eletrônica",
+      "descricao": "Neste projeto, vamos construir um circuito eletrônico básico que serve como introdução ao mundo da eletrônica. Aprenda sobre componentes eletrônicos, como resistores e capacitores, e descubra como montar um circuito funcional, desenvolvendo habilidades práticas essenciais.",
+      "autores": "Carlos",
+      "categoria": [
+        "Eletrônica"
+      ],
+      "dataPostagem": "2023-11-02",
+      "imagem": "https://jornadaedu.com.br/wp-content/uploads/2021/02/educacao-5-0.png",
+      "fotoPerfil": "https://assets.propmark.com.br/uploads/2022/06/Claudio-Olimpio_DaX.jpg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
+    },
+    {
+      "id": "3",
+      "titulo": "Projeto Mobile",
+      "descricao": "Neste projeto, você irá desenvolver um aplicativo móvel desde a concepção até a implementação. Explore as melhores práticas de programação, design de interface e usabilidade, e transforme sua ideia em um aplicativo funcional e atraente para usuários.",
+      "autores": "Mario",
+      "categoria": [
+        "programação"
+      ],
+      "dataPostagem": "2023-11-03",
+      "imagem": "https://www.jornaldebarueri.com.br/wp-content/uploads/2022/06/sala-maker-13.jpeg",
+      "likes": 2,
+      "usersLiked": [
+        "578c",
+        "d6bc"
+      ]
+    },
+    {
+      "id": "0296",
+      "titulo": "Programação para todos!",
+      "descricao": "O Programação para todos apresenta aos alunos o mundo da programação por meio de puzzles interativos, personagens divertidos e atividades envolventes. Antes de começar a criar sua experiência de clube, é útil explorar os recursos abaixodo Programação para todos",
+      "autores": "Janielson Anjos",
+      "categoria": [
+        "Programação"
+      ],
+      "dataPostagem": "2024-11-06",
+      "imagem": "https://www.valuehost.com.br/blog/wp-content/uploads/2016/10/linguagens-de-programacao.jpeg.webp",
+      "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
+      "linkDrive": "https://www.apple.com/br/education/docs/clube_de_programacao_swift.pdf",
+      "criadorId": "d6bc",
+      "likes": 3,
+      "usersLiked": [
+        "d6bc",
+        "578c",
+        "ec4a"
+      ]
+    },
+    {
+      "id": "cd05",
+      "titulo": "Projeto Integrador Softex",
+      "descricao": "Aqui tem tudo sobre o projeto integrador da softex pernambuco, onde foi trabalho a construção do projeto utilizando tudo o que foi visto na sala de aula",
+      "autores": "Janielson Anjos",
+      "categoria": [
+        "Programação"
+      ],
+      "dataPostagem": "2024-11-16",
+      "imagem": "https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2024/07/whatsapp-image-2024-07-31-at-151731-2.jpg",
+      "linkDrive": "https://www.instagram.com/softexpernambuco/p/C7y3-tLNqNQ/?img_index=1",
+      "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
+      "criadorId": "d6bc",
+      "likes": 3,
+      "usersLiked": [
+        "d6bc",
+        "578c",
+        "ec4a"
+      ]
+    },
+    {
+      "id": "b3ff",
+      "titulo": "Projeto Front end - Calculadora",
+      "descricao": "Este é um projeto de Front end, utilizando html, css, js e bootstrap, onde o desafio foi criar uma calculadora de imc, dólar para real ou real para dólar, melhor escolha entre álcool ou gasolina, e uma calculadora normal, foi adicionado um cadastro, login e uma opção de entrar anónimo, para isso foi utilizado o localstorage.",
+      "autores": "Janielson Anjos",
+      "categoria": [
+        "Programação"
+      ],
+      "dataPostagem": "2024-11-17",
+      "imagem": "https://blog.b2bstack.com.br/wp-content/uploads/2022/01/front-end-banner.jpg",
+      "linkDrive": "https://github.com/Janielson-Anjos/fap-2024/tree/main/Calculadora",
+      "fotoPerfil": "https://avatars.githubusercontent.com/u/72242469?v=4",
+      "criadorId": "d6bc",
+      "likes": 3,
+      "usersLiked": [
+        "578c",
+        "d6bc",
+        "ec4a"
+      ]
+    }
+  ],
+  "projetos-pendentes": []
+}

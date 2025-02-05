@@ -1,0 +1,114 @@
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #0a3161;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-logo img {
+    width: 129px;
+    height: 50px;
+    margin-right: 8px;
+  }
+  
+  .navbar-logo span {
+    color: #0a3161;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 70%;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 40px;
+  }
+  
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  
+  .navbar-search input {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 30px;
+    
+  }
+  
+  .navbar-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .navbar-icons span {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .navbar-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .navbar-profile .navbar-auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar-btn-login {
+    padding: 7px 16px;
+    background-color: transparent; /* Cor de fundo */
+    color: #0a3161; /* Cor do texto */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #0a3161;
+  }
+  
+  .navbar-btn-login:hover {
+    background-color: #0a3161;
+    color: #fff;
+    transition: background-color 0.5s ease;
+  }
+  .navbar-btn-cadastro {
+    padding: 8px 16px;
+    background-color: #0a3161; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .navbar-btn-cadastro:hover {
+    background-color: transparent;
+    color: #0a3161;
+    /* border: 1px solid #0a3161; */
+    outline: 1px solid #0a3161;
+    outline-offset: -1px;
+    transition: background-color 0.5s ease;
+  }

@@ -1,0 +1,38 @@
+.conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.projetos{
+    margin-top: 50px;
+    margin-left: 250px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.perfil{
+    /* margin-top: 30px; */
+    margin-left: 200px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.projetos-compartilhados {
+    margin-top: 400px; /* Ajuste do topo para evitar que fique colado */
+    margin-left: 240px; /* Centraliza automaticamente o card */
+    margin-right: auto; /* Centraliza automaticamente o card */
+    margin-bottom: 20px; /* Espaço entre o card e o fundo */
+    width: 800px;
+    height: 900px;
+    display: flex;
+    padding-bottom: 20px;
+    padding-top: 20px; /* Espaçamento adicional no topo se necessário */
+    flex-direction: column; /* Garante que os elementos internos do card sigam a ordem correta */
+}

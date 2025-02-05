@@ -1,0 +1,56 @@
+/* Estilo principal da barra lateral */
+.sidebar {
+  position: fixed; /* Fixa a barra lateral à esquerda */
+  top: 60px; /* Ajusta o início logo abaixo da Navbar */
+  left: 0;
+  height: calc(100vh - 60px); /* Ocupa o restante da altura da tela */
+  width: 200px; /* Largura da barra lateral */
+  background-color: #0a3161; /* Cor de fundo */
+  padding: 20px;
+  color: #fff;
+  overflow-y: auto; /* Permite rolagem, se necessário */
+  display: flex;
+  flex-direction: column; /* Direção dos itens na barra lateral */
+  justify-content: space-around;
+  
+}
+
+/* Estilo dos itens da barra lateral */
+.sidebar-item {
+  list-style: none;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para o item ativo */
+.sidebar-item.active {
+  background-color: #ffffff;
+  color: #0a3161;
+}
+
+/* Efeito ao passar o mouse sobre os itens */
+.sidebar-item:hover {
+  background-color: #061c36;
+  color: #fff;
+}
+
+visible .sidebar-item {
+  display: none;
+}
+
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px; */
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.sidebar footer p {
+  margin: 5px 0;
+}
